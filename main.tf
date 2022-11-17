@@ -1,3 +1,7 @@
+#######################################
+##      Storage (str) :: Bucket      ##
+#######################################
+
 module "folder2" {
   source = "./cloud_storage"
 
@@ -35,4 +39,31 @@ module "folder2" {
   data_locations              = var.data_locations
   main_page_suffix            = var.main_page_suffix
   not_found_page              = var.not_found_page
+}
+
+#######################################
+##      Storage (str) :: Object      ##
+#######################################
+
+module "folder3" {
+  source = "./cloud_storage_object"
+
+  name                 = var.name
+  object_source        = var.object_source
+  content              = var.content
+  bucket               = var.bucket
+  metadata             = var.metadata
+  cache_control        = var.cache_control
+  content_disposition  = var.content_disposition
+  content_encoding     = var.content_encoding
+  content_language     = var.content_language
+  content_type         = var.content_type
+  event_based_hold     = var.event_based_hold
+  temporary_hold       = var.temporary_hold
+  detect_md5hash       = var.detect_md5hash
+  object_storage_class = var.object_storage_class
+  kms_key_name         = var.kms_key_name
+  encryption_algorithm = var.encryption_algorithm
+  encryption_key       = var.encryption_key
+
 }
